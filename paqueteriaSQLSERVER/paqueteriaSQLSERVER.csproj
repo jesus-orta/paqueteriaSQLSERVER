@@ -58,11 +58,21 @@
     <Compile Include="Conductores.Designer.cs">
       <DependentUpon>Conductores.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConexionSQL.cs" />
     <Compile Include="Envios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Envios.Designer.cs">
       <DependentUpon>Envios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpcionesEnvio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpcionesEnvio.Designer.cs">
+      <DependentUpon>OpcionesEnvio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaqueteriaDataSet.cs">
+      <DependentUpon>PaqueteriaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="PaqueteriaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -83,6 +93,12 @@
     <Compile Include="Sucursales.Designer.cs">
       <DependentUpon>Sucursales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Visitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visitas.Designer.cs">
+      <DependentUpon>Visitas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Envios.resx">
       <DependentUpon>Envios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpcionesEnvio.resx">
+      <DependentUpon>OpcionesEnvio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -106,6 +125,9 @@
     </Compile>
     <EmbeddedResource Include="Sucursales.resx">
       <DependentUpon>Sucursales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visitas.resx">
+      <DependentUpon>Visitas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="PaqueteriaDataSet.xsc">
       <DependentUpon>PaqueteriaDataSet.xsd</DependentUpon>

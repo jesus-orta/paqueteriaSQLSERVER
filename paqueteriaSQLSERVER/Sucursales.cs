@@ -22,7 +22,8 @@ namespace paqueteriaSQLSERVER
         public Sucursales()
         {
             InitializeComponent();
-            c = new SqlConnection("Data Source=DESKTOP-O5C197G;Initial Catalog=Paqueteria;Integrated Security=True");
+
+            c = new SqlConnection("Data Source=.;Initial Catalog=Paqueteria;Integrated Security=True");
             timeSucursal1.Format = DateTimePickerFormat.Time;
             timeSucursal1.ShowUpDown = true;
             timeSucursal2.Format = DateTimePickerFormat.Time;
@@ -93,7 +94,7 @@ namespace paqueteriaSQLSERVER
                 {
                     String valor = comboCd_Suc.SelectedValue.ToString();
                     c.Open();
-                    cmd = new SqlCommand("INSERT INTO Administracion.Sucursales (IdCiudad, nombre, direccion, telefono, horaApertura, horaCierre) VALUES('" + Convert.ToInt32(valor) + "'" + "," + "'" + textBoxSuc.Text + "'" + "," + "'" + textBoxDir_Suc.Text + "'" + "," + "'" + textBoxTel_Suc.Text + "'" + "," + "'" + timeSucursal1.Text + "'" + "," + "'" + timeSucursal2.Text + "')", c);
+                    cmd = new SqlCommand("INSERT INTO Administracion.Sucursales (IdCiudad, nombre, direccion, telefono, horaApertura, horaCierre) VALUES('" + Convert.ToInt32(valor) + "'" + "," + "'" + textBoxSuc.Text + "'" + "," + "'" + textBoxDir_Suc.Text + "'" + "," + "'" + textBoxTel_Suc.Text + "'" + "," + "'" + timeSucursal1.Text.Replace(" a. m.", "").Replace(" p. m.", "") + "'" + "," + "'" + timeSucursal2.Text.Replace(" a. m.", "").Replace(" p. m.", "") + "')", c);
                     cmd.ExecuteNonQuery();
                     c.Close();
                     actualizaCombos();
@@ -136,12 +137,19 @@ namespace paqueteriaSQLSERVER
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-            textBoxSuc.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            comboCd_Suc.SelectedValue = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            textBoxDir_Suc.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            textBoxTel_Suc.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            timeSucursal1.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            timeSucursal2.Text = this.dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            try
+            {
+                textBoxSuc.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                comboCd_Suc.SelectedValue = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                textBoxDir_Suc.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                textBoxTel_Suc.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                timeSucursal1.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                timeSucursal2.Text = this.dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
 
         private void buttDelSuc_Click(object sender, EventArgs e)

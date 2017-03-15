@@ -40,5 +40,10 @@ namespace paqueteriaSQLSERVER
             Conductores cond = new Conductores();
             cond.Show();
         }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

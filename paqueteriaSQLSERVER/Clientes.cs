@@ -22,7 +22,7 @@ namespace paqueteriaSQLSERVER
         public Clientes()
         {
             InitializeComponent();
-            c = new SqlConnection("Data Source=DESKTOP-O5C197G;Initial Catalog=Paqueteria;Integrated Security=True");
+            c = new SqlConnection("Data Source=.;Initial Catalog=Paqueteria;Integrated Security=True");
             actualizarDataGrid();
         }
 
