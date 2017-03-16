@@ -30,17 +30,17 @@
         {
             this.GridDatos = new System.Windows.Forms.DataGridView();
             this.Grupo1 = new System.Windows.Forms.GroupBox();
-            this.IdEnvio = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Ciudad = new System.Windows.Forms.TextBox();
-            this.Accion = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Destino = new System.Windows.Forms.TextBox();
-            this.G1_Insertar = new System.Windows.Forms.Button();
-            this.G1_Actualizar = new System.Windows.Forms.Button();
             this.G1_Eliminar = new System.Windows.Forms.Button();
+            this.G1_Actualizar = new System.Windows.Forms.Button();
+            this.G1_Insertar = new System.Windows.Forms.Button();
+            this.Destino = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Accion = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Ciudad = new System.Windows.Forms.TextBox();
+            this.IdEnvio = new System.Windows.Forms.TextBox();
             this.Grupo2 = new System.Windows.Forms.GroupBox();
             this.Eliminar_Grupo2 = new System.Windows.Forms.Button();
             this.Actualizar_Grupo2 = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@
             this.GridDatos.Name = "GridDatos";
             this.GridDatos.Size = new System.Drawing.Size(662, 283);
             this.GridDatos.TabIndex = 0;
-            this.GridDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.GridDatos.Click += new System.EventHandler(this.click_data);
             // 
             // Grupo1
             // 
@@ -85,37 +85,60 @@
             this.Grupo1.TabStop = false;
             this.Grupo1.Text = "Historial de Envio";
             // 
-            // IdEnvio
+            // G1_Eliminar
             // 
-            this.IdEnvio.Location = new System.Drawing.Point(97, 22);
-            this.IdEnvio.Name = "IdEnvio";
-            this.IdEnvio.Size = new System.Drawing.Size(124, 20);
-            this.IdEnvio.TabIndex = 0;
+            this.G1_Eliminar.Location = new System.Drawing.Point(242, 113);
+            this.G1_Eliminar.Name = "G1_Eliminar";
+            this.G1_Eliminar.Size = new System.Drawing.Size(75, 23);
+            this.G1_Eliminar.TabIndex = 7;
+            this.G1_Eliminar.Text = "Eliminar";
+            this.G1_Eliminar.UseVisualStyleBackColor = true;
+            this.G1_Eliminar.Click += new System.EventHandler(this.G1_Eliminar_Click);
             // 
-            // label1
+            // G1_Actualizar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "IdEnvio";
+            this.G1_Actualizar.Location = new System.Drawing.Point(135, 113);
+            this.G1_Actualizar.Name = "G1_Actualizar";
+            this.G1_Actualizar.Size = new System.Drawing.Size(75, 23);
+            this.G1_Actualizar.TabIndex = 7;
+            this.G1_Actualizar.Text = "Actualizar";
+            this.G1_Actualizar.UseVisualStyleBackColor = true;
+            this.G1_Actualizar.Click += new System.EventHandler(this.G1_Actualizar_Click);
             // 
-            // label2
+            // G1_Insertar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "CiudadActual";
+            this.G1_Insertar.Location = new System.Drawing.Point(23, 113);
+            this.G1_Insertar.Name = "G1_Insertar";
+            this.G1_Insertar.Size = new System.Drawing.Size(75, 23);
+            this.G1_Insertar.TabIndex = 7;
+            this.G1_Insertar.Text = "Insertar";
+            this.G1_Insertar.UseVisualStyleBackColor = true;
+            this.G1_Insertar.Click += new System.EventHandler(this.G1_Insertar_Click);
             // 
-            // Ciudad
+            // Destino
             // 
-            this.Ciudad.Location = new System.Drawing.Point(96, 63);
-            this.Ciudad.Name = "Ciudad";
-            this.Ciudad.Size = new System.Drawing.Size(124, 20);
-            this.Ciudad.TabIndex = 0;
+            this.Destino.Location = new System.Drawing.Point(342, 57);
+            this.Destino.Name = "Destino";
+            this.Destino.Size = new System.Drawing.Size(121, 20);
+            this.Destino.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(280, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Destino";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(277, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Accion";
             // 
             // Accion
             // 
@@ -131,60 +154,37 @@
             this.Accion.Size = new System.Drawing.Size(121, 21);
             this.Accion.TabIndex = 3;
             // 
-            // label3
+            // label2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(277, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Accion";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "CiudadActual";
             // 
-            // label4
+            // label1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(280, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Destino";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "IdEnvio";
             // 
-            // Destino
+            // Ciudad
             // 
-            this.Destino.Location = new System.Drawing.Point(342, 57);
-            this.Destino.Name = "Destino";
-            this.Destino.Size = new System.Drawing.Size(121, 20);
-            this.Destino.TabIndex = 6;
+            this.Ciudad.Location = new System.Drawing.Point(96, 63);
+            this.Ciudad.Name = "Ciudad";
+            this.Ciudad.Size = new System.Drawing.Size(124, 20);
+            this.Ciudad.TabIndex = 0;
             // 
-            // G1_Insertar
+            // IdEnvio
             // 
-            this.G1_Insertar.Location = new System.Drawing.Point(23, 113);
-            this.G1_Insertar.Name = "G1_Insertar";
-            this.G1_Insertar.Size = new System.Drawing.Size(75, 23);
-            this.G1_Insertar.TabIndex = 7;
-            this.G1_Insertar.Text = "Insertar";
-            this.G1_Insertar.UseVisualStyleBackColor = true;
-            this.G1_Insertar.Click += new System.EventHandler(this.G1_Insertar_Click);
-            // 
-            // G1_Actualizar
-            // 
-            this.G1_Actualizar.Location = new System.Drawing.Point(135, 113);
-            this.G1_Actualizar.Name = "G1_Actualizar";
-            this.G1_Actualizar.Size = new System.Drawing.Size(75, 23);
-            this.G1_Actualizar.TabIndex = 7;
-            this.G1_Actualizar.Text = "Actualizar";
-            this.G1_Actualizar.UseVisualStyleBackColor = true;
-            this.G1_Actualizar.Click += new System.EventHandler(this.G1_Actualizar_Click);
-            // 
-            // G1_Eliminar
-            // 
-            this.G1_Eliminar.Location = new System.Drawing.Point(242, 113);
-            this.G1_Eliminar.Name = "G1_Eliminar";
-            this.G1_Eliminar.Size = new System.Drawing.Size(75, 23);
-            this.G1_Eliminar.TabIndex = 7;
-            this.G1_Eliminar.Text = "Eliminar";
-            this.G1_Eliminar.UseVisualStyleBackColor = true;
-            this.G1_Eliminar.Click += new System.EventHandler(this.G1_Eliminar_Click);
+            this.IdEnvio.Location = new System.Drawing.Point(97, 22);
+            this.IdEnvio.Name = "IdEnvio";
+            this.IdEnvio.Size = new System.Drawing.Size(124, 20);
+            this.IdEnvio.TabIndex = 0;
             // 
             // Grupo2
             // 

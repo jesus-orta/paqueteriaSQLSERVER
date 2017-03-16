@@ -30,8 +30,8 @@ namespace paqueteriaSQLSERVER
             // 8 3 1 2 4 6 5 7
             try
             {
-                this.ClienteCombo.Text = EnviosDataGrid.CurrentRow.Cells[8].Value.ToString();
-                this.CiudadCombo.Text = EnviosDataGrid.CurrentRow.Cells[3].Value.ToString();
+                this.Cliente.Text = EnviosDataGrid.CurrentRow.Cells[8].Value.ToString();
+                this.Ciudad.Text = EnviosDataGrid.CurrentRow.Cells[3].Value.ToString();
                 this.FechaRecibido.Text = EnviosDataGrid.CurrentRow.Cells[1].Value.ToString();
                 this.FechaEntrega.Text = EnviosDataGrid.CurrentRow.Cells[2].Value.ToString();
                 this.Destinatario.Text = EnviosDataGrid.CurrentRow.Cells[4].Value.ToString();
@@ -50,8 +50,8 @@ namespace paqueteriaSQLSERVER
             try
             {
                 string query = "INSERT INTO Envios.Envios( IdCiudadEnviar, NombreDestino, Direccion, Telefono, CP, IdClienteEmisor)";
-                query += "VALUES ('" + CiudadCombo.Text + "', '" + Destinatario.Text + "','"+Direccion.Text+"',";
-                query += "'"+Telefono.Text+"', '"+CP.Text+"', '"+ClienteCombo.Text+"')";
+                query += "VALUES ('" + Ciudad.Text + "', '" + Destinatario.Text + "','"+Direccion.Text+"',";
+                query += "'"+Telefono.Text+"', '"+CP.Text+"', '"+Cliente.Text+"')";
 
                 conexion.EjecutaSQL(query);
 
@@ -85,8 +85,8 @@ namespace paqueteriaSQLSERVER
             try
             {
                 string id = EnviosDataGrid.CurrentRow.Cells[0].Value.ToString();
-                string query = "update Envios.Envios SET idCiudadEnviar = '" + CiudadCombo.Text + "', NombreDestino = '"+Destinatario.Text+"',";
-                query += "Direccion = '"+Direccion.Text+"', Telefono = '"+Telefono.Text+"', CP = '"+CP.Text+"', IdClienteEmisor = '"+ClienteCombo.Text+"'";
+                string query = "update Envios.Envios SET idCiudadEnviar = '" + Ciudad.Text + "', NombreDestino = '"+Destinatario.Text+"',";
+                query += "Direccion = '"+Direccion.Text+"', Telefono = '"+Telefono.Text+"', CP = '"+CP.Text+"', IdClienteEmisor = '"+Cliente.Text+"'";
                 query += " where IdEnvio = '" + id + "'";                
                 conexion.EjecutaSQL(query);
             }
@@ -135,7 +135,8 @@ namespace paqueteriaSQLSERVER
 
         private void button9_Click(object sender, EventArgs e)
         {
-
+            Paquetes p = new Paquetes();
+            p.Show();
         }
     }
 }

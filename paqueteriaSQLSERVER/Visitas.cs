@@ -32,19 +32,7 @@ namespace paqueteriaSQLSERVER
             conexion.actualizaDataGridView(query, dataGridView1);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                comboBox1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            }
-            catch(Exception exc)
-            {
-
-            }
-        }
-
+     
         private void button1_Click(object sender, EventArgs e)
         {
             string query = "Insert into Envios.Visitas(IdEnvio, estatus) Values (";
@@ -66,7 +54,7 @@ namespace paqueteriaSQLSERVER
             try
             {
                 DateTime d = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[1].Value.ToString());
-                query += "where CONVERT(VARCHAR(35), Fecha, 126) LIKE '%" + d.ToString("yyyy-MM-dd HH:mm:ss").Insert(10, "%").Remove(11, 1) + "%'"; ;
+                query += "where CONVERT(VARCHAR(35), Fecha, 126) LIKE '%" + d.ToString("yyyy-MM-dd HH:mm:ss").Insert(10, "%").Remove(11, 1) + "%'" ;
                 conexion.EjecutaSQL(query);                
             }
             catch (Exception ex)
@@ -93,6 +81,20 @@ namespace paqueteriaSQLSERVER
                 MessageBox.Show(""+ex);
             }
             ActualizaDAtaGrid();
+
+        }
+
+        private void data_click(object sender, EventArgs e)
+        {
+            try
+            {
+                textBox1.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                comboBox1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            }
+            catch (Exception exc)
+            {
+
+            }
 
         }
     }
