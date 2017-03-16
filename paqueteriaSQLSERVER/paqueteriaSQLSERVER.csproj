@@ -79,6 +79,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PaqueteriaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Paquetes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paquetes.Designer.cs">
+      <DependentUpon>Paquetes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OpcionesEnvio.resx">
       <DependentUpon>OpcionesEnvio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paquetes.resx">
+      <DependentUpon>Paquetes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
