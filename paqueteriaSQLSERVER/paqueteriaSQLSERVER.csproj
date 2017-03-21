@@ -79,6 +79,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PaqueteriaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PaqueteriaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaqueteriaDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Paquetes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +103,12 @@
     </Compile>
     <Compile Include="Sucursales.Designer.cs">
       <DependentUpon>Sucursales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas.Designer.cs">
+      <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
     <Compile Include="Visitas.cs">
       <SubType>Form</SubType>
@@ -135,6 +146,9 @@
     <EmbeddedResource Include="Sucursales.resx">
       <DependentUpon>Sucursales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Visitas.resx">
       <DependentUpon>Visitas.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +162,17 @@
     </None>
     <None Include="PaqueteriaDataSet.xss">
       <DependentUpon>PaqueteriaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PaqueteriaDataSet1.xsc">
+      <DependentUpon>PaqueteriaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PaqueteriaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaqueteriaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PaqueteriaDataSet1.xss">
+      <DependentUpon>PaqueteriaDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
