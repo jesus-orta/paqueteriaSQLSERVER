@@ -45,5 +45,11 @@ namespace paqueteriaSQLSERVER
         {
 
         }
+
+        private void buttonVentas_Click(object sender, EventArgs e)
+        {
+            Ventas ventas = new Ventas();
+            ventas.Show();
+        }
     }
 }

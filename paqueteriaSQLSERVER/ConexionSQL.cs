@@ -109,6 +109,18 @@ namespace paqueteriaSQLSERVER
 
         }
 
-
+        //LLenar combobox
+        public void actualizarComboBox(String query, String DisplayMember, String ValueMember, ComboBox cb)
+        {
+            dt = new DataTable();
+            c.Open();
+            SqlCommand cmd = new SqlCommand(query, c);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            c.Close();
+            cb.DisplayMember = DisplayMember;//"Matricula";
+            cb.ValueMember = ValueMember;//"IdUnidad";
+            cb.DataSource = dt;
+        }
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.Ciudad = new System.Windows.Forms.TextBox();
+            this.Cliente = new System.Windows.Forms.TextBox();
             this.FechaEntrega = new System.Windows.Forms.DateTimePicker();
             this.FechaRecibido = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
@@ -55,8 +57,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.Cliente = new System.Windows.Forms.TextBox();
-            this.Ciudad = new System.Windows.Forms.TextBox();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EnviosDataGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -91,6 +91,20 @@
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Envios";
+            // 
+            // Ciudad
+            // 
+            this.Ciudad.Location = new System.Drawing.Point(98, 47);
+            this.Ciudad.Name = "Ciudad";
+            this.Ciudad.Size = new System.Drawing.Size(153, 20);
+            this.Ciudad.TabIndex = 26;
+            // 
+            // Cliente
+            // 
+            this.Cliente.Location = new System.Drawing.Point(98, 17);
+            this.Cliente.Name = "Cliente";
+            this.Cliente.Size = new System.Drawing.Size(153, 20);
+            this.Cliente.TabIndex = 26;
             // 
             // FechaEntrega
             // 
@@ -331,20 +345,6 @@
             this.button4.Text = "Historial De Envios";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // Cliente
-            // 
-            this.Cliente.Location = new System.Drawing.Point(98, 17);
-            this.Cliente.Name = "Cliente";
-            this.Cliente.Size = new System.Drawing.Size(153, 20);
-            this.Cliente.TabIndex = 26;
-            // 
-            // Ciudad
-            // 
-            this.Ciudad.Location = new System.Drawing.Point(98, 47);
-            this.Ciudad.Name = "Ciudad";
-            this.Ciudad.Size = new System.Drawing.Size(153, 20);
-            this.Ciudad.TabIndex = 26;
             // 
             // Envios
             // 

@@ -462,5 +462,10 @@ namespace paqueteriaSQLSERVER
             else
                 MessageBox.Show("Seleccione un Estado de la lista");
         }
+
+        private void Sucursales_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

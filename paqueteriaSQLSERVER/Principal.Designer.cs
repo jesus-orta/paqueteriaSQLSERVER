@@ -94,6 +94,7 @@
             this.buttonVentas.Text = "Ventas";
             this.buttonVentas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonVentas.UseVisualStyleBackColor = true;
+            this.buttonVentas.Click += new System.EventHandler(this.buttonVentas_Click);
             // 
             // buttonClientes
             // 
